@@ -16,7 +16,6 @@ import { formatSeconds } from './utils/tools.js';
 import 'babel-polyfill';
 import './assets/css/main.css';
 import './assets/css/theme.scss';
-
 Vue.use(ElementUI);
 Vue.use(ViewUI);
 Vue.use(VueI18n);

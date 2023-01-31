@@ -16,11 +16,11 @@ export default new VueRouter({
       meta: { title: '整体页面布局' },
       redirect: '/test1',  // 重定向到首页
       children: [
-        // {
-        //   path: '/Home',
-        //   component: () => import('@/page/Home.vue'),
-        //   meta: { title: '首页' }
-        // },
+        {
+          path: '/Home',
+          component: () => import('@/page/Home.vue'),
+          meta: { title: '首页' }
+        },
         {
           path: '/test1',
           component: () => import('@/page/test1/index.vue'),
