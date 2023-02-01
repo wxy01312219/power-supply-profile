@@ -78,22 +78,42 @@ export default new VueRouter({
           ]
         },
         {
-          path: '/test3',
-          component: () => import('@/page/test3/index.vue'),
-          meta: { title: '一级菜单3' },
-          redirect: '/test3/test3-1',
-          children:[
-            {
-              path: 'test3-1',
-              component: () => import('@/page/test3/test3-1.vue'),
-              meta: { title: '二级菜单3-1' }
+            path: '/test3',
+            component: () => import('../page/test3/index.vue'),
+            meta: {
+                title: '一级菜单3'
             },
-            {
-              path: 'test3-2',
-              component: () => import('@/page/test3/test3-2.vue'),
-              meta: { title: '二级菜单3-2' }
-            },
-          ]
+            redirect:'/test3/test3-1',
+            children:[
+                {
+                    path: 'test3-1',
+                    component: () => import('../page/test3/test3-1.vue'),
+                    meta: {
+                        title: '二级菜单3-1'
+                    }
+                },
+                {
+                    path: 'test3-2-1',
+                    component: () => import('../page/test3/test3-2/test3-2-1.vue'),
+                    meta: {
+                        title: '三级菜单3-2-1'
+                    }
+                },
+                {
+                    path: 'test3-2-2',
+                    component: () => import('../page/test3/test3-2/test3-2-2.vue'),
+                    meta: {
+                        title: '三级菜单3-2-2'
+                    }
+                 },
+                 {
+                    path: 'test3-2-3',
+                    component: () => import('../page/test3/test3-2/test3-2-3.vue'),
+                    meta: {
+                        title: '三级菜单3-2-3'
+                    }
+                 }
+             ]
         },
         {
           path: '/i18n',  // 国际化组件
