@@ -1,15 +1,16 @@
 <template>
     <div class="content-box">
+        <!-- 电站实时监控 -->
         <div class="container">
-            <p>主题页面 3 - 2</p>
-            <div class="test-div">
-                <el-alert title="成功提示的文案" type="success" :closable="false" center show-icon> </el-alert>
-                <el-alert title="消息提示的文案" type="info" show-icon> </el-alert>
-                <el-alert title="警告提示的文案" type="warning" close-text="好的"> </el-alert>
-                <el-alert title="错误提示的文案" type="error" description="文字说明文字说明文字说明文字说明文字说明文字说明" show-icon>
-                </el-alert>
+            <p>电站实时监控</p>
+            <div class="test-div" style="width:400px;">
+                <el-carousel height="150px" class="customize-carousel">
+                    <el-carousel-item v-for="item in 4" :key="item">
+                        <h3>{{ item }}</h3>
+                    </el-carousel-item>
+                </el-carousel>
             </div>
-            <totalChargingTab :data="chargingTabList" />
+        <totalChargingTab :data="chargingTabList" />
         </div>
     </div>
 </template>
@@ -92,18 +93,28 @@ export default {
                     month: 60,
                     year: 700,
                     total: 9564
-                },
+                }
             ]
         };
     }
 };
 </script>
-<style lang="less" scoped>
-.content-box {
+
+<style lang="scss">
+.customize-carousel .el-carousel__item h3 {
+    color: #475669;
+    font-size: 16px;
+    line-height: 150px;
+    margin: 0 50%;
+}
+.customize-carousel .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+}
+.customize-carousel .el-carousel__item:nth-child(2n + 1) {
+    background-color: #d3dce6;
+}
+.container{
+    width: 100%;
     height: 100%;
-    .container {
-        width: 100%;
-        min-height: 800px;
-    }
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
 <div class="content-box">
+    <!-- 监控平台 -->
   <div class="container">
-    <p>主体页面 2 - 1 </p>
+    <p>监控平台</p>
     <div class="test-div">
       <el-steps :active="active" finish-status="success" style="width:50%;">
         <el-step title="步骤 1"></el-step>

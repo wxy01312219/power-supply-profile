@@ -2,13 +2,13 @@
   <div>
     <el-card>
       <div slot="header">
-        <Icon type="md-aperture" size="30" color="#2e71ea"/><span class="clearfix">今日头条</span>
+        <Icon type="md-aperture" size="30" color="#2e71ea"/><span class="clearfix">BI及报表中心</span>
         <Dropdown style="margin-left:50px;">
           <a href="javascript:void(0)">
             <span>切换媒体</span><Icon size="20" type="ios-arrow-down" />
           </a>
           <DropdownMenu slot="list">
-            <DropdownItem>今日头条</DropdownItem>
+            <DropdownItem>BI及报表中心</DropdownItem>
             <DropdownItem>广点通</DropdownItem>
             <DropdownItem>快手</DropdownItem>
           </DropdownMenu>

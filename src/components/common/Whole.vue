@@ -56,10 +56,10 @@ export default {
     return{
       itemList: [    // 水平一级菜单栏的菜单
         { path: '/Home', title: '首页' },
-        { path: '/test1', title: '一级菜单1' },
-        { path: '/test2', title: '一级菜单2' },
-        { path: '/test3', title: '一级菜单3' },
-        { path: '/permission', title: '管理员权限' },
+        { path: '/order', title: '订单分析' },
+        { path: '/power', title: '电站分析' },
+        { path: '/settlement', title: '结算分析' },
+        // { path: '/permission', title: '管理员权限' },
         // { path: '/i18n', title: '国际化组件' }
       ],
       globalTheme: false,

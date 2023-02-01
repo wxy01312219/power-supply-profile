@@ -1,7 +1,8 @@
 <template>
 <div class="content-box">
+    <!-- 电站历史数据 -->
   <div class="container">
-    <p>主体页面 2 - 2 </p>
+    <p>电站历史数据 </p>
 
     <div class="table-container">
       <el-table ref="Table2"
