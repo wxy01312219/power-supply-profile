@@ -1,5 +1,6 @@
 <template>
     <div class="content-box">
+        <breadcrumb />
         <!-- 电站实时监控 -->
         <div class="container">
             <p>电站实时监控</p>
@@ -17,8 +18,9 @@
 
 <script>
 import totalChargingTab from '@/components/charging-tab/total-charging-pile.vue';
+import breadcrumb from '@/components/breadcrumb/index.vue';
 export default {
-    components: { totalChargingTab },
+    components: { totalChargingTab,breadcrumb },
     data() {
         return {
             chargingTabList: [

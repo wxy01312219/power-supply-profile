@@ -1,5 +1,6 @@
 <template>
 <div class="content-box">
+    <breadcrumb />
     <!-- 监控平台 -->
   <div class="container">
     <p>监控平台</p>
@@ -16,7 +17,9 @@
 </template>
 
 <script>
+import breadcrumb from '@/components/breadcrumb/index.vue';
 export default {
+    components: {breadcrumb },
   data(){
     return{
       active: 0

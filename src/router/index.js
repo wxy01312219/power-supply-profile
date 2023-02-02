@@ -42,7 +42,7 @@ export default new VueRouter({
                             path: 'charging-vehicle',
                             component: () => import('@/page/order/order-report/charging-vehicle.vue'),
                             meta: { title: '车辆充电尖峰平谷信息' }
-                        },
+                        }
                     ]
                 },
                 // 电站分析
@@ -52,7 +52,7 @@ export default new VueRouter({
                     meta: { title: '电站分析' },
                     redirect: '/power/power-platform', // 该配置是若点击选择父目录时，默认选中该父目录下的子路径页面
                     children: [
-                           // 电站监控
+                        // 电站监控
                         {
                             path: 'power-platform',
                             component: () => import('@/page/power-station/power-station-analysis/power-platform.vue'),
@@ -68,8 +68,8 @@ export default new VueRouter({
                             component: () => import('@/page/power-station/power-station-analysis/power-situation.vue'),
                             meta: { title: '电站情况一览' }
                         },
-                         // 电站分析
-                         {
+                        // 电站分析
+                        {
                             path: 'power-historical-data',
                             component: () => import('@/page/power-station/power-station-monitoring/power-historical-data.vue'),
                             meta: { title: '电站历史数据' }
@@ -78,7 +78,7 @@ export default new VueRouter({
                             path: 'power-data-analysis',
                             component: () => import('@/page/power-station/power-station-monitoring/power-data-analysis.vue'),
                             meta: { title: '电站数据分析' }
-                        },
+                        }
                     ]
                 },
                 // 结算分析
@@ -96,7 +96,7 @@ export default new VueRouter({
                             meta: {
                                 title: '大客户报表'
                             }
-                        },
+                        }
                     ]
                 },
                 {
