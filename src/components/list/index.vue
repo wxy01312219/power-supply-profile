@@ -10,7 +10,16 @@
                 <part left="枪口编号：" :right="item.muzzleNumber" />
                 <part left="待机时长：" :right="item.standbyTime" />
                 <part left="待机时间：" :right="item.time" />
-                <button class="list-btn">电价明细</button>
+                <!-- 电价明细 -->
+                <el-popover placement="bottom" trigger="click" popper-class="popperOptions">
+                    <el-table border :data="gridData" :cell-style="rowStyle">
+                        <el-table-column align="center" width="100" property="date" label="时间"></el-table-column>
+                        <el-table-column align="center" width="100" property="electricityCharge" label="电费"></el-table-column>
+                        <el-table-column align="center" width="100" property="serviceCharge" label="服务费"></el-table-column>
+                        <el-table-column align="center" width="100" property="price" label="价格"></el-table-column>
+                    </el-table>
+                    <el-button slot="reference">电价明细</el-button>
+                </el-popover>
             </div>
         </div>
     </div>
@@ -35,7 +44,51 @@ export default {
                 { id: 1, text: '2#' }
             ],
             number: 0,
-            listValueType: []
+            listValueType: [],
+            gridData: [
+                {
+                    date: '00:00-07:00',
+                    electricityCharge: '0.381',
+                    serviceCharge: '0',
+                    price: 0.381
+                },
+                {
+                    date: '07:00-09:00',
+                    electricityCharge: '0.381',
+                    serviceCharge: '0',
+                    price: 0.381
+                },
+                {
+                    date: '09:00-15:00',
+                    electricityCharge: '0.381',
+                    serviceCharge: '0',
+                    price: 0.381
+                },
+                {
+                    date: '15:00-20:00',
+                    electricityCharge: '0.381',
+                    serviceCharge: '0',
+                    price: 0.381
+                },
+                {
+                    date: '20:00-22:00',
+                    electricityCharge: '0.381',
+                    serviceCharge: '0',
+                    price: 0.381
+                },
+                {
+                    date: '22:00-23:00',
+                    electricityCharge: '0.381',
+                    serviceCharge: '0',
+                    price: 0.381
+                },
+                {
+                    date: '23:00-24:00',
+                    electricityCharge: '0.381',
+                    serviceCharge: '0',
+                    price: 0.381
+                }
+            ]
         };
     },
     created() {
@@ -52,13 +105,21 @@ export default {
         listNumber(num) {
             this.listValueType = [];
             this.number = num;
-            console.log(this.number, num, 'this.number');
             this.listValue.forEach(item => {
                 if (item.pile == this.number) {
                     this.listValueType.push(item);
                 }
             });
-            console.log(this.listValue, 'this.listValue');
+            // console.log(this.listValue, 'this.listValue');
+        },
+        rowStyle({ row, column, rowIndex, columnIndex }) {
+            //设置表格每行间隔颜色
+            if (rowIndex % 2 === 0) {
+                return 'background:#2A3056;border:none;color: #FFFFFF;';
+            }
+            if (rowIndex % 2 === 1) {
+                return 'background:#2E335E;border:none;color: #FFFFFF;';
+            }
         }
     }
 };
@@ -95,10 +156,25 @@ export default {
             .list-btn {
                 padding: 1px 2px;
             }
+            /deep/.el-button {
+                padding: 8px 10px;
+            }
+            /deep/.el-table--scrollable-x .el-table__body-wrapper {
+                overflow-x: hidden;
+            }
         }
         .active {
             border: 2px solid #000;
         }
+        /deep/.el-table .cell {
+            text-align: center !important;
+        }
     }
+}
+</style>
+<style>
+.popperOptions {
+    min-width: 400px !important;
+    min-height: 270px !important;
 }
 </style>
