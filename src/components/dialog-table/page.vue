@@ -37,12 +37,12 @@ export default {
 </script>
 <style lang="less" scoped>
 .block {
-   display: flex;
-   width: 100%;
+    display: flex;
+    width: 100%;
     /deep/.el-input {
         width: 100px !important;
     }
-    .demonstration{
+    .demonstration {
         margin-top: 5px;
     }
 }

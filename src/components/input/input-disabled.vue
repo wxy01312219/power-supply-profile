@@ -13,9 +13,14 @@
                             <img class="img" width="30px" src="@/assets/img/more.png" alt="" />
                         </button>
                     </div>
-                    <el-select v-model="form[item.model]" :placeholder="item.placeholder" v-if="item.type === 'select'">
+                    <el-select v-model="form[item.model]" :placeholder="item.placeholder" v-if="item.type === 'select'" >
                         <!--如果是select或者checkbox 、Radio就还需要选项信息-->
+                        <div v-if="item.model=='chargingStartTime'">
                         <el-option v-for="item in item.opts" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                        </div>
+                        <div v-else>
+                        <el-option v-for="item in item.opts" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                        </div>
                     </el-select>
                     <el-switch v-model="form[item.model]" v-if="item.type === 'switch'"></el-switch>
                     <el-date-picker
@@ -94,7 +99,8 @@ export default {
                     code: '42057324',
                     name: '武汉市普陀区金沙江路 1516'
                 }
-            ]
+            ],
+            valueTime:'充电结束时间'
         };
     },
     methods: {
@@ -110,7 +116,9 @@ export default {
         // 重置
         handleScheme() {},
         // 方案
-        handleSearch() {},
+        handleSearch() {
+            console.log(this.form, 'handleSearch'); //form 获取当前所有信息
+        },
         // 导出记录
         handleExport() {}
     }
@@ -134,15 +142,14 @@ export default {
     /deep/.el-button {
         padding: 8px;
     }
-    .img {
-        vertical-align: top;
-    }
+
     .btn-img {
         position: absolute;
         width: 30px;
         height: 30px;
         top: 5px;
         right: 0px;
+     
     }
     .btn-query {
         color: #fff;

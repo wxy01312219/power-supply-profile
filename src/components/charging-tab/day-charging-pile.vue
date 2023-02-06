@@ -62,7 +62,7 @@ export default {
         },
         // 左滑动逻辑
         scrollLeft() {
-            const allLength = this.data.length * 120;
+            const allLength = this.data.length * 220;
             const boxLength = document.getElementById('list-box').clientWidth;
             if (allLength < boxLength) return;
             const listEl = document.getElementById('list');
@@ -76,7 +76,7 @@ export default {
         },
         // 右滑动逻辑
         scrollRight() {
-            const allLength = this.data.length * 120;
+            const allLength = this.data.length * 220;
             const boxLength = document.getElementById('list-box').clientWidth;
             if (allLength < boxLength) return;
             const listEl = document.getElementById('list');

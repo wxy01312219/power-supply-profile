@@ -11,16 +11,21 @@
                     </el-carousel-item>
                 </el-carousel>
             </div>
-        <totalChargingTab :data="chargingTabList" />
+            <dayChargingPile :data="chargingTabList" />
+            <br />
+            <br />
+            <br />
+            <totalChargingTab :data="chargingTabList" />
         </div>
     </div>
 </template>
 
 <script>
+import dayChargingPile from '@/components/charging-tab/day-charging-pile.vue';
 import totalChargingTab from '@/components/charging-tab/total-charging-pile.vue';
 import breadcrumb from '@/components/breadcrumb/index.vue';
 export default {
-    components: { totalChargingTab,breadcrumb },
+    components: { totalChargingTab, dayChargingPile, breadcrumb },
     data() {
         return {
             chargingTabList: [
@@ -95,6 +100,86 @@ export default {
                     month: 60,
                     year: 700,
                     total: 9564
+                },
+                {
+                    id: 9,
+                    text1: 520.19,
+                    text2: '武汉公交永旺充电站',
+                    text3: 7777.19,
+                    month: 60,
+                    year: 700,
+                    total: 9564
+                },
+                {
+                    id: 10,
+                    text1: 520.19,
+                    text2: '武汉公交永旺充电站',
+                    text3: 7777.19,
+                    month: 60,
+                    year: 700,
+                    total: 9564
+                },
+                {
+                    id: 11,
+                    text1: 520.19,
+                    text2: '武汉公交永旺充电站',
+                    text3: 7777.19,
+                    month: 60,
+                    year: 700,
+                    total: 9564
+                },
+                {
+                    id: 12,
+                    text1: 520.19,
+                    text2: '武汉公交永旺充电站',
+                    text3: 7777.19,
+                    month: 60,
+                    year: 700,
+                    total: 9564
+                },
+                {
+                    id: 13,
+                    text1: 520.19,
+                    text2: '武汉公交永旺充电站',
+                    text3: 7777.19,
+                    month: 60,
+                    year: 700,
+                    total: 9564
+                },
+                {
+                    id: 14,
+                    text1: 520.19,
+                    text2: '武汉公交永旺充电站',
+                    text3: 7777.19,
+                    month: 60,
+                    year: 700,
+                    total: 9564
+                },
+                {
+                    id: 15,
+                    text1: 520.19,
+                    text2: '武汉公交永旺充电站',
+                    text3: 7777.19,
+                    month: 60,
+                    year: 700,
+                    total: 9564
+                },
+                {
+                    id: 16,
+                    text1: 520.19,
+                    text2: '武汉公交永旺充电站',
+                    text3: 7777.19,
+                    month: 60,
+                    year: 700,
+                    total: 9564
+                }, {
+                    id: 17,
+                    text1: 520.19,
+                    text2: '武汉公交永旺充电站',
+                    text3: 7777.19,
+                    month: 60,
+                    year: 700,
+                    total: 9564
                 }
             ]
         };
@@ -115,7 +200,7 @@ export default {
 .customize-carousel .el-carousel__item:nth-child(2n + 1) {
     background-color: #d3dce6;
 }
-.container{
+.container {
     width: 100%;
     height: 100%;
 }

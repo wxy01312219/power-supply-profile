@@ -11,6 +11,7 @@
         <el-step title="步骤 3"></el-step>
       </el-steps>
       <el-button @click="next()" type="primary">下一步</el-button>
+      <monitoringTable/>
     </div>
   </div>
 </div>
@@ -18,8 +19,9 @@
 
 <script>
 import breadcrumb from '@/components/breadcrumb/index.vue';
+import monitoringTable from '@/components/table/monitoring-table/index.vue';
 export default {
-    components: {breadcrumb },
+    components: {breadcrumb,monitoringTable },
   data(){
     return{
       active: 0

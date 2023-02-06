@@ -51,6 +51,7 @@
 
             <!-- 分页组件 -->
             <Pagination :total="total" :page.sync="listQuery.pageNum" :limit.sync="listQuery.pageSize" @pagination="getList"></Pagination>
+            <list :listValue="listValue" />
         </div>
     </div>
 </template>
@@ -59,6 +60,7 @@
 import Pagination from '@/components/common/Pagination';
 import { testApi } from '@/api/test';
 import breadcrumb from '@/components/breadcrumb/index.vue';
+import list from '@/components/list/index.vue';
 const defaultListQuery = {
     pageNum: 1,
     pageSize: 10,
@@ -68,7 +70,8 @@ const defaultListQuery = {
 export default {
     components: {
         Pagination,
-        breadcrumb
+        breadcrumb,
+        list
     },
     data() {
         return {
@@ -76,7 +79,63 @@ export default {
             list: [],
             total: 0,
             listLoading: true,
-            selectedList: []
+            selectedList: [],
+            listValue: [
+                {
+                    id: 1,
+                    code: 420114221542652,
+                    status: '空闲',
+                    muzzleNumber: 1,
+                    pile: 0,
+                    standbyTime: '1天10小时1分1秒',
+                    time: '2023-02-05 01:14:45'
+                },
+                {
+                    id: 2,
+                    code: 420136921542652,
+                    status: '空闲',
+                    muzzleNumber: 1,
+                    pile: 0,
+                    standbyTime: '1天10小时分1秒',
+                    time: '2023-02-05 01:17:45'
+                },
+                {
+                    id: 3,
+                    code: 420114221635652,
+                    status: '空闲',
+                    muzzleNumber: 1,
+                    pile: 0,
+                    standbyTime: '1天10小时8分1秒',
+                    time: '2023-02-05 01:15:45'
+                },
+                {
+                    id: 4,
+                    code: 420114221542652,
+                    status: '空闲',
+                    muzzleNumber: 1,
+                    pile: 0,
+                    standbyTime: '1天10小时1分1秒',
+                    time: '2023-02-05 01:14:45'
+                },
+                {
+                    id: 5,
+                    code: 4201366568542652,
+                    status: '空闲',
+                    muzzleNumber: 1,
+                    pile: 1,
+                    standbyTime: '1天10小时分1秒',
+                    time: '2023-02-04 01:17:45'
+                },
+                {
+                    id: 6,
+                    code: 4201142219685652,
+                    status: '空闲',
+                    muzzleNumber: 1,
+                    pile: 1,
+                    standbyTime: '1天10小时8分1秒',
+                    time: '2023-02-04 01:15:45'
+                }
+            ]
         };
     },
     created() {
